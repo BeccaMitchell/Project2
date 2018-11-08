@@ -15,5 +15,8 @@ conda create -n project2 python=3.6
 source activate project2
 ```
 
-* Install libraries from Requirement.txt
+* Install libraries from requirements.txt
+
+```sh
 pip install -r requirements.txt
+```
