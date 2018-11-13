@@ -1,6 +1,8 @@
 import requests
-
-headers = {'Authorization': 'Bearer Z2Req78WUrVMlvbzMRTXTawJhOfrhmXAnj8YvydOGYTKBLI1tCDRenM3iUZUb0OzSaAl2923eiATHP2NKwXYIMyiWhZGNGWR6OT-cHLGU4AjNHi9ANJZY0w9R5XjW3Yx'}
+#Rodrigo
+#headers = {'Authorization': 'Bearer Z2Req78WUrVMlvbzMRTXTawJhOfrhmXAnj8YvydOGYTKBLI1tCDRenM3iUZUb0OzSaAl2923eiATHP2NKwXYIMyiWhZGNGWR6OT-cHLGU4AjNHi9ANJZY0w9R5XjW3Yx'}
+#Phoenix
+headers = {'Authorization': 'Bearer lTPbt20EhwQ4f24-lDrhYMnkVtzqxs-abco2Hs_SO-cvvL4WThxaYOoc5Q2H0eNBb4Qeva26A0l0GOfSjqNSEf1pUyJq4l2x9VA86d2rsm6lVYJbOJeoDl3e9hrqW3Yx'}
 
 def getBusiness(name, address1, city, state, country):
     url = "https://api.yelp.com/v3/businesses/matches?name={}&address1={}&city={}&state={}&country={}".format(name, address1, city, state, country)
