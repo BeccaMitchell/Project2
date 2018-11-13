@@ -1,0 +1,119 @@
+#logo{
+    background-color: #4aaaa5;
+    color: white;
+    margin-left: 60px;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 25px;
+}
+
+.footer{
+    color: white;
+    margin-left: 60px;
+    padding-top: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    text-align: center;
+}
+
+.blank{
+    background-color: lightgray;
+}
+
+.description-header{
+    color: #4aaaa5;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 35px;
+    font-weight: bold;
+}
+.col-md-4{
+    padding-top: 50px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+
+#imageNav-area {
+    width: 100%;
+    padding: 30px 30px 43px;
+    background-color: #fff;
+  }
+
+.imageNav-header {
+    margin-bottom: 15px;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 25px;
+    font-weight: bold;
+    color: #4aaaa5;
+  }
+  
+.imageNav-photo {
+    width: 140px;
+    height: 140px;
+  }
+  
+.imageNav-vis{
+    width: 500px;
+    height: 400px;
+}
+  
+#images {
+    padding-top: 15px;
+    text-align: center;
+  }
+
+
+html, body{
+    background-color: lightgray;
+    height: 100%;
+}
+
+.col-md-12{
+    background-color: white;
+    padding: 10px 10px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.box{
+    padding:  25px 25px 25px 25px;
+    background-color: white;
+    overflow: auto;
+    height: auto;
+}
+.img-box{
+    background-color: white;
+    overflow: auto;
+    height: auto;
+}
+tr, th, td{
+    text-align: center;
+    padding: 10px 10px 10px;
+    margin: auto;
+}
+
+
+
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: rgb(90, 88, 88);
+}
+@media only screen and (max-width: 900px) {
+    body {
+      background-color: #fff;
+    }
+  
+  }
