@@ -35,6 +35,14 @@ def index():
     """Return the homepage."""
     return render_template("index.html")
 
+@app.route("/<page_name>")
+def static_page(page_name):
+    print(page_name)
+    if page_name is not None:
+        print(page_name)
+        return render_template(page_name)
+    return render_template("index.html")
+    
 
 @app.route("/UpdateCategories")
 def UpdateCategories():
@@ -141,6 +149,34 @@ def BusinessDetailUpdateFacilityId(facilityId):
     business.YelpURL         = yelp_data2['url']
     business.YelpImageUrl    = yelp_data2['image_url']
     business.YelpRaiting     = yelp_data2['rating']
+    business.YelpReviewCount = yelp_data2['review_count']
+    db.session.commit()
+
+    return jsonify("Record Updated!!!")
+
+@app.route("/BusinessUpdateByFacilityId/<facilityId>")
+def BusinessUpdateByFacilityId(facilityId):
+    business = db.session.query(Business).filter(Business.FacilityID == facilityId).first()
+
+    name = html.escape(business.Name, quote=True).replace('#', '%23')
+    print(name)
+    yelp_data   = getBusiness(name, business.Street, business.City, business.State, 'US')
+    if len(yelp_data['businesses']) == 0:
+        return jsonify("Business doesn't exists in YELP!!!")
+    
+    yelpId = yelp_data['businesses'][0]['id']
+
+    yelp_data2  = getBusinessDetail(yelpId)
+
+    categories = []
+    [categories.append(cat_data['title'])  for cat_data in yelp_data2['categories']]
+
+    business.YelpID         = yelpId
+    business.YelpCategories = ','.join(categories)
+    business.YelpPhone      = yelp_data2['phone']
+    business.YelpURL        = yelp_data2['url']
+    business.YelpImageUrl   = yelp_data2['image_url']
+    business.YelpRaiting    = yelp_data2['rating']
     business.YelpReviewCount = yelp_data2['review_count']
     db.session.commit()
 

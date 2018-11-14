@@ -1,26 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Project 2</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Slime in the Ice Machine</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="main.js"></script>
 </head>
-
 <body>
+        <!-- Start of navbar -->
+        <nav class="navbar navbar-default">
+                <div class="container-fluid navbar-custom">
+          
+                  <!-- Brand and toggle get grouped for better mobile display -->
+                  <div class="row">
+                    <div class="navbar-header">
+                      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle Navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                      </button>
+                      <div class="col-s-9 phone-nav">
+                        <a class="navbar-brand" href="#" id="logo">Gentleman Parrot</a>
+                      </div>
+                    </div>
+          
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                      <ul class="nav navbar-nav navbar-right navbar-right-custom">
+                        <li class="dropdown">
+                          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Meet the Team <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                           <li><a href="rodrigo.html">Rodrigo</a></li>
+                            <li><a href="felicia.html">Felicia</a></li>
+                            <li><a href="phoenix.html">Phoenix</a></li>
+                            <li><a href="becca.html">Becca</a></li>
+                            <li><a href="kaileigh.html">Kaileigh</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="about.html">About the Project</a></li>
+                        <li><a href="data.html">Data</a></li>
+                      </ul> 
+                    </div><!-- /.navbar-collapse -->
+                  </div>
+                </div><!-- /.container-fluid -->
+              </nav>
+              <!-- End of navbar -->
 
-  <div class="container">
-    <h2>Project 2 Web Page</h2>
-  </div>
+              <div class="container">
+                <div class="row">
+                  <div class="col-md-12 jumbotron text-center">
+                    <h1>Slime in the Ice Machine</h1>
+                    <p>Use the interactive charts below to explore the dataset.<hr>
+                    Find out how your favorite restaurants scored in their routine health inspections.</p>
+                  </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                      <h2>Average Health Inspection Scores by Zip</h2><hr>
+                      <p>Hover to inspect your zipcode</p>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div id="geo">
+                            
+                              <div class='tableauPlaceholder' id='viz1542074665329' style='position: relative'><noscript><a href='#'><img alt=' ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AT&#47;ATXP2&#47;Sheet1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='ATXP2&#47;Sheet1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;AT&#47;ATXP2&#47;Sheet1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='filter' value='publish=yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1542074665329');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 
-  <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
-  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-  <script src="{{ url_for('static', filename='js/bonus.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                <div class="row">
+                  <div class="col-md-4"></div>
+                  <div class="col-md-4">
+                    <div class="well">
+                      <h5>Select Restaurant:</h5>
+                      <select id="selDataset" onchange="optionChanged(this.value)"></select>
+                    </div>
+                    <div class="panel panel-primary">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">Restaurant Data</h3>
+                      </div>
+                      <div id="sample-metadata" class="panel-body"></div>
+                    </div>
+                  </div>
+                  <div class="col-md-4"></div>
+                  <div class="col-md-5">
+                    <div id="pie"></div>
+                  </div>
+                  <div class="col-md-5">
+                    <div id="gauge"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div id="bubble"></div>
+                </div>
+              </div>
+                    <!--start of footer-->
+        <div id="footer">
+            <div class="container">
+              <p class="footer">Gentleman Parrot--UT Data Analysis and Visualization</p>
+      
+            </div>
+          </div>
+        <!--End of footer-->
+        
+    <!-- jQuery CDN -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 
-</body>
-
-</html>
+    <!-- Bootstrap CDN -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+              <!-- <script src="https://cdn.plot.ly/plotly-1.31.2.min.js"></script> -->
+              <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script> -->
+              <!-- <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> -->
+              <!-- <script src="{{ url_for('static', filename='js/bonus.js') }}"></script> -->
+              <!-- <script src="{{ url_for('static', filename='js/app.js') }}"></script> -->
+            
+            </body>
+            
+            </html>
+            
