@@ -188,7 +188,9 @@ def BusinessUpdateByFacilityId(facilityId):
 
 @app.route("/BusinessByZipCode/<zipcode>/")
 def BusinessByZipCode(zipcode):
-    business = db.session.query(Business).filter(Business.ZipCode == zipcode).filter(Business.YelpID.isnot(None)).all()
+    #business = db.session.query(Business).filter(Business.ZipCode == zipcode).filter(Business.YelpID.isnot(None)).all()
+    business = db.session.query(Business).filter(Business.ZipCode == zipcode).filter(Business.YelpID != "Not Found").all()
+    #print(business.count())
     records = []
     for record in business:
         output = record.__dict__
