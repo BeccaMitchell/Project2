@@ -96,6 +96,10 @@ def BusinessFromYelp():
         print(name)
         yelp_data   = getBusiness(name, row.Street, row.City, row.State, 'US')
         if len(yelp_data['businesses']) == 0:
+            yelpId = "Not Found"
+            row.YelpID = yelpId
+            db.session.commit()
+            print(yelpId)
             continue
         yelpId = yelp_data['businesses'][0]['id']
         
@@ -104,9 +108,9 @@ def BusinessFromYelp():
         categories = []
         [categories.append(cat_data['title'])  for cat_data in yelp_data2['categories']]
 
-        row.YelpID      = yelpId
+        row.YelpID          = yelpId
         row.YelpCategories  = ','.join(categories)
-        row.YelpPhone   = yelp_data2['phone']
+        row.YelpPhone       = yelp_data2['phone']
         row.YelpURL         = yelp_data2['url']
         row.YelpImageUrl    = yelp_data2['image_url']
         row.YelpRaiting     = yelp_data2['rating']
@@ -182,5 +186,17 @@ def BusinessUpdateByFacilityId(facilityId):
 
     return jsonify("Record Updated!!!")
 
+@app.route("/BusinessByZipCode/<zipcode>/")
+def BusinessByZipCode(zipcode):
+    business = db.session.query(Business).filter(Business.ZipCode == zipcode).filter(Business.YelpID.isnot(None)).all()
+    records = []
+    for record in business:
+        output = record.__dict__
+        print(output)
+        output.pop('_sa_instance_state', None)
+        records.append(output)
+        
+    return jsonify(records)
+    
 if __name__ == "__main__":
     app.run()
