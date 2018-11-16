@@ -91,6 +91,22 @@ html, body{
     border-radius: 10px 10px 10px 10px;
 }
 
+#different{
+    background-color: rgb(253, 184, 184);
+    padding: 10px 10px 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px 10px 10px 10px;
+    /* opacity: .5; */
+}
+
+#datatable{
+    margin-left:15px;
+    margin-right: 15px;
+    border-radius: 10px 10px 10px 10px;
+    z-index: 1;
+    opacity: 1;
+}
 .box{
     padding:  25px 25px 25px 25px;
     background-color: white;
