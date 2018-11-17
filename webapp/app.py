@@ -2,7 +2,7 @@ import os, html, json
 
 import pandas as pdl
 import numpy as np
-from yelp import * 
+#from yelp import * 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm import Session
