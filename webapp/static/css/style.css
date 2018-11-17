@@ -20,7 +20,10 @@
     font-size: 15px;
     text-align: center;
 }
-
+.homeLink{
+    font-family: 'Times New Roman', Times, serif;
+    color: lightcoral;
+}
 .blank{
     background-color: lightgray;
 }
